@@ -6,11 +6,10 @@ export default function Home() {
       {/* Header / Intro Section */}
       <header className="space-y-4">
         <h1 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
-          Hi, I'm Your Name ☻
+          Hi, I'm Abdullah ☻
         </h1>
         <p className="text-zinc-400 text-base leading-relaxed">
-          I am a software engineer focused on building clean, high-performance web applications. 
-          Specializing in full-stack development, database optimization, and modern user interfaces.
+          I am a software Developer.
         </p>
       </header>
 
@@ -18,18 +17,18 @@ export default function Home() {
 
       {/* Projects Section */}
       <section className="space-y-6">
-        <h2 className="text-xl font-semibold tracking-tight text-zinc-200">Projects</h2>
+        <h2 className="text-xl font-semibold tracking-tight text-zinc-200">Info</h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           
           <ProjectCard 
-            title="Inventory Management System"
-            description="A full-stack tracking application built with advanced relational database architecture."
+            title="Black Hat Hacker"
+            description="Anonymous Activities"
             link="#"
           />
           
           <ProjectCard 
-            title="Database Performance Optimizer"
-            description="Automated scripts designed to tune parallel processing, indexes, and execution plans."
+            title="Cyber Criminal"
+            description="Suspicious & Deep Pentesting"
             link="#"
           />
 
@@ -38,7 +37,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="mt-20 text-xs text-zinc-600 tracking-wide">
-        © {new Date().getFullYear()} — Built from scratch via Mobile Terminal
+        © {new Date().getFullYear()} — All Right Reserved!.
       </footer>
     </div>
   );
