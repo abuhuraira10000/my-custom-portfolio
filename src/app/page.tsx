@@ -9,7 +9,7 @@ export default function Home() {
           Hi, I'm Abdullah ☻
         </h1>
         <p className="text-zinc-400 text-base leading-relaxed">
-          I am a software Developer.
+          I am a Software Developer.
         </p>
       </header>
 
@@ -37,7 +37,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="mt-20 text-xs text-zinc-600 tracking-wide">
-        © {new Date().getFullYear()} — All Right Reserved!.
+        © {new Date().getFullYear()} — All Rights Reserved!.
       </footer>
     </div>
   );
