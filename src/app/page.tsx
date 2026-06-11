@@ -344,7 +344,7 @@ export default function Home() {
 
         {/* Minimalist Footer */}
         <footer className="site-footer">
-          &copy; copyright 2026 Abdullah. All Rights Reserved
+         Copyright  &copy;2026 Abdullah. All Rights Reserved
         </footer>
 
       </div>
