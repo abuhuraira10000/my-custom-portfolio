@@ -1,67 +1,286 @@
-import React from 'react';
+'use client';
+
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [isLightMode, setIsLightMode] = useState(false);
+
+  // Load theme preference from localStorage on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined' && localStorage.getItem('portfolio-theme') === 'light') {
+      setIsLightMode(true);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const nextMode = !isLightMode;
+    setIsLightMode(nextMode);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('portfolio-theme', nextMode ? 'light' : 'dark');
+    }
+  };
+
+  const skills = [
+    { name: 'Core Java', icon: 'fa-java', isFab: true },
+    { name: 'Advanced Java', icon: 'fa-laptop-code', isFab: false },
+    { name: 'Web Dev', icon: 'fa-code', isFab: false },
+    { name: 'JScript', icon: 'fa-js', isFab: true },
+    { name: 'Python', icon: 'fa-python', isFab: true },
+    { name: 'HTML5', icon: 'fa-html5', isFab: true },
+    { name: 'CSS3', icon: 'fa-css3-alt', isFab: true },
+    { name: 'MS SQL Server', icon: 'fa-database', isFab: false },
+    { name: 'C Language', icon: 'fa-terminal', isFab: false },
+    { name: 'C++', icon: 'fa-microchip', isFab: false },
+    { name: 'C#', icon: 'fa-hashtag', isFab: false },
+    { name: 'Blockchain', icon: 'fa-link', isFab: false },
+    { name: 'ASP.NET', icon: 'fa-windows', isFab: true },
+    { name: 'XML', icon: 'fa-file-code', isFab: false },
+    { name: 'JSON', icon: 'fa-braces', isFab: false }
+  ];
+
   return (
-    <div className="mx-auto max-w-2xl px-6 py-20 sm:py-32 animate-fade-in">
-      {/* Header / Intro Section */}
-      <header className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
-          Hi, I'm Abdullah ☻
-        </h1>
-        <p className="text-zinc-400 text-base leading-relaxed">
-          I am a Software Developer.
-        </p>
-      </header>
+    <>
+      {/* Dynamic Theme Styles Injection */}
+      <style>{`
+        :root {
+          --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+          --glass-bg: rgba(255, 255, 255, 0.03);
+          --glass-border: rgba(255, 255, 255, 0.08);
+          --text-primary: #f8fafc;
+          --text-secondary: #94a3b8;
+          --accent-color: #818cf8;
+          --card-hover: rgba(255, 255, 255, 0.06);
+        }
 
-      <hr className="my-10 border-zinc-800" />
+        .light-theme-wrapper {
+          --bg-gradient: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+          --glass-bg: rgba(255, 255, 255, 0.65);
+          --glass-border: rgba(15, 23, 42, 0.08);
+          --text-primary: #0f172a;
+          --text-secondary: #475569;
+          --accent-color: #4f46e5;
+          --card-hover: rgba(15, 23, 42, 0.04);
+        }
 
-      {/* Projects Section */}
-      <section className="space-y-6">
-        <h2 className="text-xl font-semibold tracking-tight text-zinc-200">Info</h2>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        .app-container {
+          background: var(--bg-gradient);
+          background-attachment: fixed;
+          color: var(--text-primary);
+          min-height: 100vh;
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: 'Inter', sans-serif;
+          transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .portfolio-card {
+          background: var(--glass-bg);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid var(--glass-border);
+          border-radius: 24px;
+          width: 100%;
+          max-width: 650px;
+          padding: 35px;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+
+        .profile-title h1 {
+          font-size: 1.8rem;
+          font-weight: 700;
+          letter-spacing: -0.05em;
+        }
+
+        .profile-title p {
+          color: var(--accent-color);
+          font-size: 0.95rem;
+          font-weight: 500;
+          margin-top: 2px;
+        }
+
+        .theme-toggle-btn {
+          background: var(--glass-bg);
+          border: 1px solid var(--glass-border);
+          color: var(--text-primary);
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.1rem;
+        }
+
+        .theme-toggle-btn:hover {
+          background: var(--card-hover);
+        }
+
+        .section-divider {
+          border: 0;
+          height: 1px;
+          background: var(--glass-border);
+          margin: 25px 0;
+        }
+
+        h2 {
+          font-size: 1.1rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          color: var(--text-secondary);
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .tech-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+
+        @media (min-width: 480px) {
+          .tech-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        .tech-badge {
+          background: var(--glass-bg);
+          border: 1px solid var(--glass-border);
+          padding: 12px;
+          border-radius: 14px;
+          font-size: 0.85rem;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .tech-badge i {
+          color: var(--accent-color);
+          font-size: 1rem;
+          width: 16px;
+          text-align: center;
+        }
+
+        .timeline {
+          position: relative;
+          padding-left: 20px;
+        }
+
+        .timeline::before {
+          content: '';
+          position: absolute;
+          left: 5px;
+          top: 5px;
+          bottom: 5px;
+          width: 2px;
+          background: var(--glass-border);
+        }
+
+        .timeline-item {
+          position: relative;
+          margin-bottom: 20px;
+        }
+
+        .timeline-item::before {
+          content: '';
+          position: absolute;
+          left: -19px;
+          top: 5px;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: var(--accent-color);
+          box-shadow: 0 0 0 4px #0f172a;
+        }
+
+        .timeline-date {
+          font-size: 0.8rem;
+          color: var(--accent-color);
+          font-weight: 600;
+        }
+
+        .timeline-title {
+          font-weight: 600;
+          font-size: 0.95rem;
+          margin-top: 2px;
+        }
+
+        .timeline-desc {
+          font-size: 0.85rem;
+          color: var(--text-secondary);
+          margin-top: 4px;
+          line-height: 1.4;
+        }
+      `}</style>
+
+      {/* FontAwesome Link Script Integration */}
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+      <div className={`app-container ${isLightMode ? 'light-theme-wrapper' : ''}`}>
+        <div className="portfolio-card">
           
-          <ProjectCard 
-            title="Black Hat Hacker"
-            description="Anonymous Activities"
-            link="#"
-          />
-          
-          <ProjectCard 
-            title="Cyber Criminal"
-            description="Suspicious & Deep Pentesting"
-            link="#"
-          />
+          {/* Main Profile Header */}
+          <div className="header">
+            <div className="profile-title">
+              <h1>Abdullah</h1>
+              <p>Full-Stack Engineer & Systems Administrator</p>
+            </div>
+            <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle Theme">
+              <i className={`fas ${isLightMode ? 'fa-sun' : 'fa-moon'}`}></i>
+            </button>
+          </div>
+
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.55' }}>
+            Developing scalable enterprise environments, full-stack applications, and secure data architecture matrix layouts. Focused on structural computing and optimal database management systems.
+          </p>
+
+          <div className="section-divider" />
+
+          {/* Technical Expertise Grid */}
+          <h2><i className="fas fa-cubes"></i> Technical Expertise</h2>
+          <div className="tech-grid">
+            {skills.map((skill, idx) => (
+              <div className="tech-badge" key={idx}>
+                <i className={`${skill.isFab ? 'fab' : 'fas'} ${skill.icon}`}></i>
+                {skill.name}
+              </div>
+            ))}
+          </div>
+
+          <div className="section-divider" />
+
+          {/* Structured Timeline Section */}
+          <h2><i className="fas fa-history"></i> Engineering Milestones</h2>
+          <div className="timeline">
+            <div className="timeline-item">
+              <div className="timeline-date">Active Focus</div>
+              <div className="timeline-title">Infrastructure Deployment & Modular Code Architecture</div>
+              <div className="timeline-desc">Building robust server systems, writing high-performance algorithm structures, and managing advanced schema layouts.</div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-date">Systems Optimization</div>
+              <div className="timeline-title">Database Administration & Environment Control</div>
+              <div className="timeline-desc">Implementing configuration parallelisms, system synchronization mechanisms, and secure transactional tracking.</div>
+            </div>
+          </div>
 
         </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="mt-20 text-xs text-zinc-600 tracking-wide">
-        © {new Date().getFullYear()} — All Rights Reserved!.
-      </footer>
-    </div>
-  );
-}
-
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  link: string;
-}
-
-function ProjectCard({ title, description, link }: ProjectCardProps) {
-  return (
-    <a 
-      href={link}
-      className="group block rounded-xl border border-zinc-800/80 bg-zinc-900/20 p-5 transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/40"
-    >
-      <h3 className="font-medium text-zinc-200 group-hover:text-sky-400 transition-colors duration-200">
-        {title} <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
-      </h3>
-      <p className="mt-2 text-sm text-zinc-400 leading-normal">
-        {description}
-      </p>
-    </a>
+      </div>
+    </>
   );
 }
 
