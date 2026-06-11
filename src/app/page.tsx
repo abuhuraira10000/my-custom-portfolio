@@ -67,12 +67,35 @@ export default function Home() {
           background-attachment: fixed;
           color: var(--text-primary);
           min-height: 100vh;
-          padding: 20px;
+          padding: 40px 20px;
           display: flex;
-          justify-content: center;
+          flex-direction: column;
           align-items: center;
+          gap: 25px;
           font-family: 'Inter', sans-serif;
           transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Top Header Styling */
+        .site-header {
+          width: 100%;
+          max-width: 650px;
+          background: var(--glass-bg);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid var(--glass-border);
+          border-radius: 16px;
+          padding: 15px 25px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .site-header-title {
+          font-size: 1.4rem;
+          font-weight: 700;
+          letter-spacing: -0.03em;
         }
 
         .portfolio-card {
@@ -87,10 +110,7 @@ export default function Home() {
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
-        .header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+        .profile-section {
           margin-bottom: 20px;
         }
 
@@ -225,23 +245,44 @@ export default function Home() {
           margin-top: 4px;
           line-height: 1.4;
         }
+
+        /* Bottom Footer Styling */
+        .site-footer {
+          width: 100%;
+          max-width: 650px;
+          text-align: center;
+          font-size: 0.85rem;
+          color: var(--text-secondary);
+          padding: 15px 0;
+          background: var(--glass-bg);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid var(--glass-border);
+          border-radius: 16px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
       `}</style>
 
       {/* FontAwesome Link Script Integration */}
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
       <div className={`app-container ${isLightMode ? 'light-theme-wrapper' : ''}`}>
-        <div className="portfolio-card">
-          
-          {/* Main Profile Header */}
-          <div className="header">
+        
+        {/* NEW Elegant Top Navbar / Header Component */}
+        <header className="site-header">
+          <div className="site-header-title">Abdullah</div>
+          <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle Theme">
+            <i className={`fas ${isLightMode ? 'fa-sun' : 'fa-moon'}`}></i>
+          </button>
+        </header>
+
+        {/* Main Content Workspace Card */}
+        <main className="portfolio-card">
+          <div className="profile-section">
             <div className="profile-title">
               <h1>Abdullah</h1>
               <p>Full-Stack Engineer & Systems Administrator</p>
             </div>
-            <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle Theme">
-              <i className={`fas ${isLightMode ? 'fa-sun' : 'fa-moon'}`}></i>
-            </button>
           </div>
 
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.55' }}>
@@ -277,10 +318,14 @@ export default function Home() {
               <div className="timeline-desc">Implementing configuration parallelisms, system synchronization mechanisms, and secure transactional tracking.</div>
             </div>
           </div>
+        </main>
 
-        </div>
+        {/* NEW Branded Bottom Footer Component */}
+        <footer className="site-footer">
+          &copy; copyright 2026 Abdullah. All Rights Reserved
+        </footer>
+
       </div>
     </>
   );
 }
-
