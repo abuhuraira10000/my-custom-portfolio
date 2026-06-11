@@ -33,7 +33,14 @@ export default function Home() {
     { name: 'C#', icon: 'fa-hashtag', isFab: false },
     { name: 'Blockchain', icon: 'fa-link', isFab: false },
     { name: 'ASP.NET', icon: 'fa-windows', isFab: true },
-    { name: 'XML', icon: 'fa-file-code', isFab: false }
+    { name: 'XML', icon: 'fa-file-code', isFab: false },
+    { name: 'Advanced AI', icon: 'fa-brain', isFab: false },
+    { name: 'Power BI & Access', icon: 'fa-chart-pie', isFab: false },
+    { name: 'ERP & SAP Systems', icon: 'fa-briefcase', isFab: false },
+    { name: 'OS & Active Directory', icon: 'fa-folder-tree', isFab: false },
+    { name: 'Cyber Security', icon: 'fa-shield-halved', isFab: false },
+    { name: 'M365 & Entra ID', icon: 'fa-user-shield', isFab: false },
+    { name: 'Firewalls & Network', icon: 'fa-network-wired', isFab: false }
   ];
 
   return (
@@ -76,12 +83,12 @@ export default function Home() {
           min-height: 100vh;
           min-height: 100dvh;
           width: 100vw;
-          padding: 20px;
+          padding: 30px 20px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           align-items: center;
-          gap: 15px;
+          gap: 20px;
           overflow-x: hidden;
         }
 
@@ -102,7 +109,6 @@ export default function Home() {
           position: relative;
         }
 
-        /* Top Corner Floating Theme Toggle Control */
         .card-controls {
           position: absolute;
           top: 25px;
@@ -113,7 +119,6 @@ export default function Home() {
           margin-bottom: 4px;
         }
 
-        /* Elegant SF Pro Dynamic Gradient Header Styling */
         .profile-title h1 {
           font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-size: 2.2rem;
@@ -224,22 +229,22 @@ export default function Home() {
 
         .timeline {
           position: relative;
-          padding-left: 16px;
+          padding-left: 20px;
         }
 
         .timeline::before {
           content: '';
           position: absolute;
           left: 4px;
-          top: 4px;
-          bottom: 4px;
+          top: 6px;
+          bottom: 6px;
           width: 1px;
           background: var(--glass-border);
         }
 
         .timeline-item {
           position: relative;
-          margin-bottom: 14px;
+          margin-bottom: 22px;
         }
 
         .timeline-item:last-child {
@@ -249,7 +254,7 @@ export default function Home() {
         .timeline-item::before {
           content: '';
           position: absolute;
-          left: -15px;
+          left: -19px;
           top: 5px;
           width: 7px;
           height: 7px;
@@ -261,19 +266,21 @@ export default function Home() {
           font-size: 0.75rem;
           color: var(--accent-color);
           font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.02em;
         }
 
         .timeline-title {
           font-weight: 600;
-          font-size: 0.9rem;
-          margin-top: 1px;
+          font-size: 0.92rem;
+          margin-top: 2px;
         }
 
         .timeline-desc {
           font-size: 0.82rem;
           color: var(--text-secondary);
-          margin-top: 3px;
-          line-height: 1.4;
+          margin-top: 4px;
+          line-height: 1.45;
         }
 
         .site-footer {
@@ -292,10 +299,8 @@ export default function Home() {
 
       <div className={`app-container ${isLightMode ? 'light-theme-wrapper' : ''}`}>
         
-        {/* Core Main Workspace Layout */}
         <main className="portfolio-card">
           
-          {/* Theme Switcher tucked neatly in the card corner */}
           <div className="card-controls">
             <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle Theme">
               <i className={`fas ${isLightMode ? 'fa-sun' : 'fa-moon'}`}></i>
@@ -326,23 +331,69 @@ export default function Home() {
 
           <div className="section-divider" />
 
-          {/* Engineering Milestones */}
+          {/* Combined Chronological Engineering Timeline */}
           <h2><i className="fas fa-history"></i> Engineering Milestones</h2>
           <div className="timeline">
+
             <div className="timeline-item">
-              <div className="timeline-date">Active Focus</div>
-              <div className="timeline-title">Infrastructure Deployment & Modular Code Architecture</div>
-              <div className="timeline-desc">Building robust server systems, writing high-performance algorithm structures, and managing advanced schema layouts.</div>
+              <div className="timeline-date">Advanced AI, Data Analytics & Media Design</div>
+              <div className="timeline-title">Intelligence Modeling, Microsoft Ecosystems & Rich Media Operations</div>
+              <div className="timeline-desc">
+                Pioneered the integration of advanced Artificial Intelligence automation models to optimize system workflows and technical operations. Expertly deployed data analytics intelligence layers using Microsoft Power BI dashboard schemas and managed relational local database infrastructure utilizing Microsoft Access DB. Fully proficient across the complete Microsoft Office 365 enterprise suite, backed by advanced rich-media engineering capabilities in professional Adobe Photoshop editing and high-end video editing pipelines.
+              </div>
             </div>
+
             <div className="timeline-item">
-              <div className="timeline-date">Systems Optimization</div>
-              <div className="timeline-title">Database Administration & Environment Control</div>
-              <div className="timeline-desc">Implementing configuration parallelisms, system synchronization mechanisms, and secure transactional tracking.</div>
+              <div className="timeline-date">ERP Systems & Workplace Operations</div>
+              <div className="timeline-title">Enterprise Resource Planning, SaaS & Financial Platforms</div>
+              <div className="timeline-desc">
+                Supervised the administration, data orchestration, and platform integrity of core enterprise environments including SAP architectures and modern Software-as-a-Service (SaaS) utilities. Directed the integration of corporate Time Attendance networks, automated payroll systems, and Time Management Systems (TMS). Successfully maintained business continuity across leading accountancy platforms, including Tally configurations and AutoCount software suites.
+              </div>
             </div>
+
+            <div className="timeline-item">
+              <div className="timeline-date">Directory Services & OS Orchestration</div>
+              <div className="timeline-title">Active Directory Domain Controls & Multi-Platform Systems</div>
+              <div className="timeline-desc">
+                Architected enterprise-level Identity and Access Management layout modules within Windows Server ecosystems (up to Server 2025 platforms). Mastered the orchestration of Active Directory Domain Services, including automated Group Policy deployments, structural organization tree management, and robust multi-platform workstation compliance matrices spanning Windows 10, Windows 11, and enterprise Linux landscapes.
+              </div>
+            </div>
+            
+            <div className="timeline-item">
+              <div className="timeline-date">Cybersecurity & Cloud Identity Governance</div>
+              <div className="timeline-title">M365 Admin, Entra ID & Perimeter Defense Platforms</div>
+              <div className="timeline-desc">
+                Orchestrated secure enterprise identity management utilizing M365 Admin Center and Microsoft Entra ID. Enforced comprehensive zero-trust architectures by deploying Multi-Factor Authentication (MFA), strict conditional access profiles, enterprise-grade Anti-virus, and intelligent Anti-spam gateway filters to mitigate environmental attack vectors.
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-date">Network Topology & Physical Infrastructure</div>
+              <div className="timeline-title">Core Layer-4 Switching, Routing & Telephony Provisioning</div>
+              <div className="timeline-desc">
+                Designed and deployed reliable local area networks encompassing core Layer-4 switches, physical routers, high-density Wi-Fi nodes, LAN configurations, and segmented VLAN schemes. Fully integrated integrated surveillance ecosystems including smart IP cameras, enterprise CCTV systems, and unified IP Phone configurations over PoE networks.
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-date">Data Retention & Resiliency Operations</div>
+              <div className="timeline-title">Network-Attached Storage (NAS), Backups & Disaster Recovery</div>
+              <div className="timeline-desc">
+                Engineered fault-tolerant corporate data storage setups deploying standalone Network-Attached Storage (NAS) configurations. Formulated aggressive regulatory backup models, immutable retention storage layers, and rigorous full-volume data recovery protocols to prevent operational business interruption.
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-date">Full-Stack Application Delivery</div>
+              <div className="timeline-title">Enterprise Web Architecture & Identity Integration</div>
+              <div className="timeline-desc">
+                Architected and deployed modular inventory tracking systems utilizing ASP.NET Core and PHP web frameworks. Successfully implemented secure, token-based authentication modules and custom database-connected layouts. Optimized back-end structural database environments, parallelism scheduling metrics, and query execution mapping inside MS SQL Server and MySQL instances.
+              </div>
+            </div>
+
           </div>
         </main>
 
-        {/* Minimalist Footer */}
         <footer className="site-footer">
          Copyright  &copy;2026 Abdullah. All Rights Reserved
         </footer>
