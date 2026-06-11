@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abdullah  | Black Hat Hacker",
-  description: "Cyber Criminal, Deep Penetrator",
+  title: "Abdullah  | Software Developer",
+  description: "Full-Stack Engineer & System Administrator",
 };
 
 export default function RootLayout({
