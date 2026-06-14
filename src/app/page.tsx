@@ -28,17 +28,22 @@ export default function Home() {
     { name: 'HTML5', icon: 'fa-html5', isFab: true },
     { name: 'CSS3', icon: 'fa-css3-alt', isFab: true },
     { name: 'MS SQL Server', icon: 'fa-database', isFab: false },
+    { name: 'Oracle Database', icon: 'fa-server', isFab: false },
     { name: 'C Language', icon: 'fa-terminal', isFab: false },
     { name: 'C++', icon: 'fa-microchip', isFab: false },
-    { name: 'C#', icon: 'fa-hashtag', isFab: false },
+    { name: 'C# & VB.NET', icon: 'fa-hashtag', isFab: false },
     { name: 'Blockchain', icon: 'fa-link', isFab: false },
     { name: 'ASP.NET', icon: 'fa-windows', isFab: true },
     { name: 'XML', icon: 'fa-file-code', isFab: false },
+    { name: 'Azure, AWS, GCP', icon: 'fa-cloud', isFab: false },
     { name: 'Advanced AI', icon: 'fa-brain', isFab: false },
     { name: 'Power BI & Access', icon: 'fa-chart-pie', isFab: false },
-    { name: 'ERP & SAP Systems', icon: 'fa-briefcase', isFab: false },
+    { name: 'ERP & POS Systems', icon: 'fa-cash-register', isFab: false },
+    { name: 'Hardware & Peripherals', icon: 'fa-screwdriver-wrench', isFab: false },
+    { name: 'RAID & Storage Arrays', icon: 'fa-hdd', isFab: false },
     { name: 'OS & Active Directory', icon: 'fa-folder-tree', isFab: false },
-    { name: 'Cyber Security', icon: 'fa-shield-halved', isFab: false },
+    { name: 'Centralized Endpoint Security', icon: 'fa-shield-virus', isFab: false },
+    { name: 'ONT Modem & Edge Routing', icon: 'fa-route', isFab: false },
     { name: 'M365 & Entra ID', icon: 'fa-user-shield', isFab: false },
     { name: 'Firewalls & Network', icon: 'fa-network-wired', isFab: false }
   ];
@@ -46,6 +51,7 @@ export default function Home() {
   return (
     <>
       <style>{`
+        /* Default Dark Theme Variables */
         :root {
           --bg-gradient: linear-gradient(135deg, #070a13 0%, #0f0c20 100%);
           --glass-bg: rgba(255, 255, 255, 0.02);
@@ -57,10 +63,11 @@ export default function Home() {
           --name-gradient: linear-gradient(135deg, #ffffff 30%, #c7d2fe 100%);
         }
 
+        /* Explicit Light Theme Classes applied dynamically */
         .light-theme-wrapper {
           --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-          --glass-bg: rgba(255, 255, 255, 0.7);
-          --glass-border: rgba(15, 23, 42, 0.06);
+          --glass-bg: rgba(255, 255, 255, 0.75);
+          --glass-border: rgba(15, 23, 42, 0.08);
           --text-primary: #0f172a;
           --text-secondary: #475569;
           --accent-color: #4f46e5;
@@ -73,7 +80,6 @@ export default function Home() {
           padding: 0;
           box-sizing: border-box;
           font-family: 'Inter', sans-serif;
-          transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         .app-container {
@@ -90,6 +96,7 @@ export default function Home() {
           align-items: center;
           gap: 20px;
           overflow-x: hidden;
+          transition: background 0.3s ease, color 0.3s ease;
         }
 
         .portfolio-card {
@@ -107,6 +114,7 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           position: relative;
+          transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card-controls {
@@ -137,13 +145,43 @@ export default function Home() {
           font-weight: 500;
           margin-top: 4px;
           letter-spacing: -0.01em;
+          transition: color 0.3s ease;
+        }
+
+        .contact-info-block {
+          margin-top: 10px;
+          display: flex;
+          gap: 14px;
+          flex-wrap: wrap;
+        }
+
+        .contact-link {
+          color: var(--text-primary);
+          text-decoration: none;
+          font-size: 0.85rem;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          background: var(--glass-bg);
+          border: 1px solid var(--glass-border);
+          padding: 6px 12px;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+          border-color: var(--accent-color);
+          background: var(--card-hover);
+          color: var(--accent-color);
         }
 
         .bio-text {
           color: var(--text-secondary);
           font-size: 0.9rem;
-          line-height: 1.55;
-          margin-top: 14px;
+          line-height: 1.6;
+          margin-top: 16px;
+          transition: color 0.3s ease;
         }
 
         .theme-toggle-btn {
@@ -158,6 +196,7 @@ export default function Home() {
           width: 35px;
           height: 35px;
           border-radius: 50%;
+          transition: color 0.3s ease, background 0.3s ease;
         }
 
         .theme-toggle-btn:hover {
@@ -170,6 +209,7 @@ export default function Home() {
           height: 1px;
           background: var(--glass-border);
           margin: 22px 0;
+          transition: background 0.3s ease;
         }
 
         h2 {
@@ -182,6 +222,7 @@ export default function Home() {
           display: flex;
           align-items: center;
           gap: 8px;
+          transition: color 0.3s ease;
         }
 
         .tech-grid {
@@ -212,6 +253,7 @@ export default function Home() {
           display: flex;
           align-items: center;
           gap: 10px;
+          transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
         }
 
         .tech-badge:hover {
@@ -225,6 +267,7 @@ export default function Home() {
           font-size: 0.95rem;
           width: 14px;
           text-align: center;
+          transition: color 0.3s ease;
         }
 
         .timeline {
@@ -240,6 +283,7 @@ export default function Home() {
           bottom: 6px;
           width: 1px;
           background: var(--glass-border);
+          transition: background 0.3s ease;
         }
 
         .timeline-item {
@@ -260,6 +304,7 @@ export default function Home() {
           height: 7px;
           border-radius: 50%;
           background: var(--accent-color);
+          transition: background 0.3s ease;
         }
 
         .timeline-date {
@@ -268,6 +313,7 @@ export default function Home() {
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.02em;
+          transition: color 0.3s ease;
         }
 
         .timeline-title {
@@ -281,6 +327,7 @@ export default function Home() {
           color: var(--text-secondary);
           margin-top: 4px;
           line-height: 1.45;
+          transition: color 0.3s ease;
         }
 
         .site-footer {
@@ -292,6 +339,7 @@ export default function Home() {
           font-weight: 400;
           letter-spacing: 0.03em;
           padding: 4px 0;
+          transition: color 0.3s ease;
         }
       `}</style>
 
@@ -310,10 +358,16 @@ export default function Home() {
           <div className="profile-title">
             <h1>Abdullah</h1>
             <p>Full-Stack Engineer & Systems Administrator</p>
+            
+            <div className="contact-info-block">
+              <a href="mailto:abdulla10k@atomicmail.io" className="contact-link">
+                <i className="fas fa-envelope"></i> abdulla10k@atomicmail.io
+              </a>
+            </div>
           </div>
 
           <p className="bio-text">
-            Developing scalable enterprise environments, full-stack applications, and secure data architecture matrix layouts. Focused on structural computing and optimal database management systems.
+            Architecting high-availability multi-cloud environments, modern full-stack web platforms, and secure data infrastructure layouts. Specialized in building scalable applications, orchestrating deep endpoint security layers, and optimizing robust relational database systems across enterprise networks.
           </p>
 
           <div className="section-divider" />
@@ -331,9 +385,25 @@ export default function Home() {
 
           <div className="section-divider" />
 
-          {/* Combined Chronological Engineering Timeline */}
+          {/* Chronological Engineering Timeline */}
           <h2><i className="fas fa-history"></i> Engineering Milestones</h2>
           <div className="timeline">
+
+            <div className="timeline-item">
+              <div className="timeline-date">On-Premises Infrastructure & Storage Engineering</div>
+              <div className="timeline-title">Bare-Metal Server Provisioning, Lifecycle Operations & Advanced RAID Topologies</div>
+              <div className="timeline-desc">
+                Directed end-to-end bare-metal hardware engineering across production server rooms and corporate nodes. Expertly handled the physical installation, complex hardware configuration, preventative maintenance routines, and secure bare-metal server deployment lifecycles. Specialized in physical data center array management, executing zero-downtime hot-swappable hard disk expansions, faulty logical volume drive reconstructions, and highly-resilient block-level storage layouts using hardware RAID 0, RAID 1, RAID 5, and multi-disk striping/mirroring across RAID 10 configurations. Managed extensive device setups, peripheral hardware debugging, and structural optimization for enterprise network printers and corporate multi-function photocopiers.
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-date">Cloud Architecture & DevOps Infrastructure</div>
+              <div className="timeline-title">Multi-Cloud Orchestration & Distributed Environments</div>
+              <div className="timeline-desc">
+                Designed, provisioned, and managed highly available cloud architecture matrices across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP). Orchestrated secure infrastructure migrations, serverless execution computing deployments, and continuous delivery pipelines while enforcing cloud network security policy parameters across multi-tenant enterprise environments.
+              </div>
+            </div>
 
             <div className="timeline-item">
               <div className="timeline-date">Advanced AI, Data Analytics & Media Design</div>
@@ -360,18 +430,18 @@ export default function Home() {
             </div>
             
             <div className="timeline-item">
-              <div className="timeline-date">Cybersecurity & Cloud Identity Governance</div>
-              <div className="timeline-title">M365 Admin, Entra ID & Perimeter Defense Platforms</div>
+              <div className="timeline-date">Cybersecurity & Centralized Endpoint Governance</div>
+              <div className="timeline-title">M365 Admin, Entra ID & Distributed Perimeter Anti-Virus Platforms</div>
               <div className="timeline-desc">
-                Orchestrated secure enterprise identity management utilizing M365 Admin Center and Microsoft Entra ID. Enforced comprehensive zero-trust architectures by deploying Multi-Factor Authentication (MFA), strict conditional access profiles, enterprise-grade Anti-virus, and intelligent Anti-spam gateway filters to mitigate environmental attack vectors.
+                Orchestrated secure enterprise identity management utilizing M365 Admin Center and Microsoft Entra ID. Enforced comprehensive zero-trust architectures by deploying Multi-Factor Authentication (MFA), strict conditional access profiles, and centralized endpoint management tools. Expertly administered distributed network defense configurations across modern cloud security architectures, deploying and maintaining enterprise centralized Anti-Virus platforms including Sophos environments, Trend Vision One threat intelligence, McAfee infrastructure, Bitdefender networks, and Microsoft Defender management. Maintained extensive workstation host defense frameworks across client endpoints using Norton 360, Malwarebytes endpoints, Avast Business utilities, and Avira security tools to completely mitigate environmental security vulnerabilities.
               </div>
             </div>
 
             <div className="timeline-item">
-              <div className="timeline-date">Network Topology & Physical Infrastructure</div>
-              <div className="timeline-title">Core Layer-4 Switching, Routing & Telephony Provisioning</div>
+              <div className="timeline-date">Network Topology, ONT Telecommunications & Vendor Coordination</div>
+              <div className="timeline-title">Core Layer-4 Switching, Optical Fiber Modems & Collaborative Engineering</div>
               <div className="timeline-desc">
-                Designed and deployed reliable local area networks encompassing core Layer-4 switches, physical routers, high-density Wi-Fi nodes, LAN configurations, and segmented VLAN schemes. Fully integrated integrated surveillance ecosystems including smart IP cameras, enterprise CCTV systems, and unified IP Phone configurations over PoE networks.
+                Designed and deployed reliable local area networks encompassing core Layer-4 switches, physical routers, high-density Wi-Fi nodes, LAN configurations, and segmented VLAN schemes. Specialized in high-performance telecommunications architectures, executing structural deployments, hardware profiling, provisioning, and complex configurations for edge Optical Network Terminal (ONT) modems to guarantee optimal fiber-optic line termination and connectivity. Maintained deep engineering synergy and technical cooperation with tier-1 internet service providers, hardware suppliers, and external engineering vendors to manage formal replies, draft incident analysis reports, track fault rectification timelines, and execute seamless service level agreements (SLAs). Fully integrated surveillance ecosystems including smart IP cameras, enterprise CCTV systems, and unified IP Phone configurations over PoE networks.
               </div>
             </div>
 
@@ -384,10 +454,10 @@ export default function Home() {
             </div>
 
             <div className="timeline-item">
-              <div className="timeline-date">Full-Stack Application Delivery</div>
-              <div className="timeline-title">Enterprise Web Architecture & Identity Integration</div>
+              <div className="timeline-date">Enterprise Web Architecture & Databases</div>
+              <div className="timeline-title">Full-Stack Web Development and Application Development</div>
               <div className="timeline-desc">
-                Architected and deployed modular inventory tracking systems utilizing ASP.NET Core and PHP web frameworks. Successfully implemented secure, token-based authentication modules and custom database-connected layouts. Optimized back-end structural database environments, parallelism scheduling metrics, and query execution mapping inside MS SQL Server and MySQL instances.
+                Architected and deployed modular enterprise portals and thick-client integrations utilizing an advanced suite of tools including HTML5, CSS3, JScript, JSP, ASP.NET, Bootstrap, React, and Node.js alongside custom VB.NET layouts. Engineered transactional Point of Sale (POS) environments and automated Call Accounting telemetry logging frameworks. Designed and optimized back-end structured engine environments across Microsoft SQL Server, MySQL instances, and heavy enterprise Oracle Database architectures.
               </div>
             </div>
 
@@ -395,11 +465,10 @@ export default function Home() {
         </main>
 
         <footer className="site-footer">
-         Copyright  &copy;2026 Abdullah. All Rights Reserved
+        Copyright &copy;2026 Abdullah. All Rights Reserved
         </footer>
 
       </div>
     </>
   );
 }
-
