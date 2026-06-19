@@ -17,12 +17,10 @@ export const metadata: Metadata = {
   description: "Full-Stack Engineer & System Administrator",
   icons: {
     icon: [
-      { url: "/favicon-32x32.png?v=5", sizes: "32x32", type: "image/png" },
-      { url: "/android-chrome-192x192.png?v=5", sizes: "192x192", type: "image/png" },
-      { url: "/android-chrome-512x512.png?v=5", sizes: "512x512", type: "image/png" },
+      { url: "/icon.svg?v=8", type: "image/svg+xml" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png?v=5", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png?v=8", sizes: "180x180", type: "image/png" },
     ],
   },
 };
