@@ -1,0 +1,553 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/22a5144ee8d83bca-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/7d4881bb7e1bf84d-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/23ac9e57c7ccffde.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-203cea5ec2127b1d.js"/><script src="/_next/static/chunks/4bd1b696-215e5051988c3dde.js" async=""></script><script src="/_next/static/chunks/794-cb380d6651d5227c.js" async=""></script><script src="/_next/static/chunks/main-app-191f9c378fcc08d6.js" async=""></script><script src="/_next/static/chunks/app/page-5dc54495a3da8de6.js" async=""></script><meta name="next-size-adjust" content=""/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><title>Abdullah  | Software Developer</title><meta name="description" content="Full-Stack Engineer &amp; System Administrator"/><link rel="icon" href="/favicon.ico?603d046c9a6fdfbb" type="image/x-icon" sizes="16x16"/><link rel="icon" href="/icon.svg?v=8" type="image/svg+xml"/><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=8" sizes="180x180" type="image/png"/><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_246ccd __variable_c29908 min-h-full flex flex-col"><div hidden=""><!--$--><!--/$--></div><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/><style>
+        /* Default Premium Dark Glass Theme Variables */
+        :root {
+          --bg-gradient: radial-gradient(circle at top left, #0c0f1d 0%, #05060b 100%);
+          --glass-bg: rgba(15, 18, 36, 0.4);
+          --glass-border: rgba(255, 255, 255, 0.08);
+          --text-primary: #f8fafc;
+          --text-secondary: #94a3b8;
+          --accent-color: #818cf8;
+          --accent-glow: rgba(129, 140, 248, 0.15);
+          --card-hover: rgba(129, 140, 248, 0.08);
+          --badge-bg: rgba(255, 255, 255, 0.02);
+          --name-gradient: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+          --modal-bg: radial-gradient(circle at top left, #12162d 0%, #080a14 100%);
+          --modal-overlay: rgba(4, 6, 14, 0.7);
+        }
+
+        /* Explicit Premium Light Glass Theme Variables */
+        .light-theme-wrapper {
+          --bg-gradient: radial-gradient(circle at top left, #f1f5f9 0%, #cbd5e1 100%);
+          --glass-bg: rgba(255, 255, 255, 0.45);
+          --glass-border: rgba(15, 23, 42, 0.08);
+          --text-primary: #0f172a;
+          --text-secondary: #475569;
+          --accent-color: #4f46e5;
+          --accent-glow: rgba(79, 70, 229, 0.12);
+          --card-hover: rgba(79, 70, 229, 0.06);
+          --badge-bg: rgba(15, 23, 42, 0.02);
+          --name-gradient: linear-gradient(135deg, #0f172a 0%, #4f46e5 100%);
+          --modal-bg: radial-gradient(circle at top left, #ffffff 0%, #f8fafc 100%);
+          --modal-overlay: rgba(241, 245, 249, 0.7);
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Inter', sans-serif;
+          -webkit-font-smoothing: antialiased;
+        }
+
+        html {
+          scroll-behavior: smooth;
+        }
+
+        .app-container {
+          background: var(--bg-gradient);
+          background-attachment: fixed;
+          color: var(--text-primary);
+          min-height: 100vh;
+          min-height: 100dvh;
+          width: 100vw;
+          padding: 12px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          overflow-x: hidden;
+          transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s ease;
+        }
+
+        @media (min-width: 1024px) {
+          .app-container {
+            padding: 40px 24px;
+          }
+        }
+
+        .portfolio-card {
+          background: var(--glass-bg);
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+          border: 1px solid var(--glass-border);
+          border-radius: 20px;
+          width: 100%;
+          max-width: 100%;
+          padding: 24px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          transition: background 0.3s ease, border-color 0.3s ease;
+          animation: cardEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes cardEntrance {
+          from { opacity: 0; transform: translateY(15px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (min-width: 1024px) {
+          .portfolio-card {
+            border-radius: 28px;
+            padding: 45px;
+            max-width: 1100px;
+            margin-bottom: 24px;
+          }
+        }
+
+        .card-controls {
+          position: absolute;
+          top: 24px;
+          right: 24px;
+          z-index: 10;
+        }
+
+        .theme-toggle-btn {
+          background: var(--badge-bg);
+          border: 1px solid var(--glass-border);
+          color: var(--text-primary);
+          padding: 10px 14px;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .theme-toggle-btn:hover {
+          border-color: var(--accent-color);
+          background: var(--card-hover);
+        }
+
+        .profile-title {
+          width: 100%;
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          padding-right: 50px;
+          position: relative;
+        }
+
+        .profile-title h1 {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 2.2rem;
+          font-weight: 800;
+          letter-spacing: -0.04em;
+          background: var(--name-gradient);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          display: inline-block;
+          text-align: left;
+          width: 100%;
+        }
+
+        @media (min-width: 1024px) {
+          .profile-title h1 { font-size: 3rem; }
+        }
+
+        .profile-title p {
+          color: var(--accent-color);
+          font-weight: 600;
+          margin-top: 4px;
+          text-transform: uppercase;
+          font-size: 0.8rem;
+          letter-spacing: 0.05em;
+          text-align: left;
+          width: 100%;
+        }
+
+        .contact-info-block {
+          margin-top: 14px;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 10px;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+
+        .contact-link {
+          color: var(--text-primary);
+          text-decoration: none;
+          font-size: 0.8rem;
+          font-weight: 500;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: var(--badge-bg);
+          border: 1px solid var(--glass-border);
+          padding: 8px 14px;
+          border-radius: 10px;
+          white-space: nowrap;
+          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .linkedin-text {
+          display: none;
+        }
+
+        @media (min-width: 768px) {
+          .contact-link { font-size: 0.82rem; }
+          .linkedin-text { display: inline; }
+        }
+
+        .contact-link:hover {
+          border-color: var(--accent-color);
+          background: var(--card-hover);
+          color: var(--accent-color);
+          box-shadow: 0 0 15px var(--accent-glow);
+          transform: translateY(-1px);
+        }
+
+        .bio-text {
+          color: var(--text-secondary);
+          font-size: 0.92rem;
+          line-height: 1.6;
+          margin-top: 16px;
+          text-align: justify; 
+          width: 100%;
+        }
+
+        .section-divider {
+          border: 0;
+          height: 1px;
+          background: var(--glass-border);
+          margin: 28px 0;
+          width: 100%;
+        }
+
+        h2 {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 0.85rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: var(--text-secondary);
+          margin-bottom: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          text-align: left;
+          gap: 8px;
+          width: 100%;
+        }
+
+        .tech-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 8px;
+          width: 100%;
+        }
+
+        @media (min-width: 600px) { .tech-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 850px) { .tech-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media (min-width: 1150px) { .tech-grid { grid-template-columns: repeat(5, 1fr); } }
+
+        .tech-badge {
+          background: var(--badge-bg);
+          border: 1px solid var(--glass-border);
+          padding: 12px 16px; 
+          border-radius: 12px;
+          font-size: 0.82rem;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; 
+          gap: 16px; 
+          white-space: normal;
+          word-break: break-word;
+          line-height: 1.3;
+          width: 100%;
+          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tech-badge:hover {
+          background: var(--card-hover);
+          border-color: var(--accent-color);
+          transform: translateY(-2px);
+          box-shadow: 4px 4px 15px var(--accent-glow);
+        }
+
+        .tech-badge i {
+          color: var(--accent-color);
+          font-size: 0.95rem;
+          width: 16px;
+          text-align: center;
+          flex-shrink: 0;
+        }
+
+        .cert-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 12px;
+          width: 100%;
+        }
+
+        @media (min-width: 650px) {
+          .cert-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 950px) {
+          .cert-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .cert-category-card {
+          background: var(--glass-bg);
+          border: 1px solid var(--glass-border);
+          border-radius: 14px;
+          padding: 18px;
+          cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cert-category-card:hover {
+          background: var(--card-hover);
+          border-color: var(--accent-color);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        .cert-category-header {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          width: 100%;
+        }
+
+        .cert-category-header i {
+          color: var(--accent-color);
+          font-size: 1.2rem;
+          width: 24px;
+          text-align: center;
+        }
+
+        .cert-category-header h3 {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 0.95rem;
+          font-weight: 700;
+          color: var(--text-primary);
+        }
+
+        .cert-count-tag {
+          font-size: 0.75rem;
+          color: var(--text-secondary);
+          background: var(--badge-bg);
+          border: 1px solid var(--glass-border);
+          padding: 2px 8px;
+          border-radius: 6px;
+          margin-top: auto;
+        }
+
+        .cert-modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: var(--modal-overlay);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          z-index: 100;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 16px;
+          animation: fadeIn 0.25s ease-out forwards;
+        }
+
+        .cert-modal-content {
+          background: var(--modal-bg);
+          border: 1px solid var(--glass-border);
+          border-radius: 20px;
+          width: 100%;
+          max-width: 650px;
+          max-height: 80vh;
+          overflow-y: auto;
+          padding: 24px;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .cert-modal-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid var(--glass-border);
+          padding-bottom: 12px;
+          width: 100%;
+        }
+
+        .cert-modal-header h3 {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 1.2rem;
+          font-weight: 800;
+          color: var(--text-primary);
+        }
+
+        .cert-modal-close-btn {
+          background: var(--badge-bg);
+          border: 1px solid var(--glass-border);
+          color: var(--text-primary);
+          width: 32px;
+          height: 32px;
+          border-radius: 8px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s ease;
+        }
+
+        .cert-modal-close-btn:hover {
+          border-color: var(--accent-color);
+          color: var(--accent-color);
+        }
+
+        .cert-item-box {
+          border-bottom: 1px dashed var(--glass-border);
+          padding-bottom: 14px;
+          margin-bottom: 4px;
+        }
+
+        .cert-item-box:last-child {
+          border-bottom: none;
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+
+        .cert-item-name {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 0.95rem;
+          font-weight: 700;
+          color: var(--accent-color);
+          margin-bottom: 4px;
+        }
+
+        .cert-item-desc {
+          font-size: 0.82rem;
+          color: var(--text-secondary);
+          line-height: 1.5;
+          text-align: justify;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        @keyframes scaleUp {
+          from { opacity: 0; transform: scale(0.96) translateY(8px); }
+          to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .timeline {
+          position: relative;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding-left: 18px;
+        }
+
+        .timeline::before {
+          content: '';
+          position: absolute;
+          left: 4px;
+          top: 6px;
+          bottom: 6px;
+          width: 1px;
+          background: var(--glass-border);
+        }
+
+        .timeline-item {
+          position: relative;
+          margin-bottom: 32px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          opacity: 0;
+          transform: translateY(24px);
+          will-change: transform, opacity;
+          transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .timeline-item.reveal-active {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-item::before {
+          content: '';
+          position: absolute;
+          left: -17px;
+          top: 6px;
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: var(--accent-color);
+          box-shadow: 0 0 8px var(--accent-color);
+        }
+
+        .timeline-date {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 0.88rem; 
+          color: var(--accent-color);
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+          text-align: left;
+          width: 100%;
+          line-height: 1.3;
+        }
+
+        .timeline-title {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-weight: 700;
+          font-size: 1.1rem; 
+          margin-top: 4px;
+          letter-spacing: -0.01em;
+          color: var(--text-primary);
+          text-align: left;
+          width: 100%;
+          line-height: 1.25;
+        }
+
+        .timeline-desc {
+          font-size: 0.82rem;
+          color: var(--text-secondary);
+          margin-top: 6px;
+          line-height: 1.6;
+          text-align: justify; 
+          width: 100%;
+          font-weight: 400;
+        }
+
+        .timeline-desc strong {
+          color: var(--text-primary);
+          font-weight: 600;
+        }
+
+        .site-footer {
+          width: 100%;
+          max-width: 1100px;
+          text-align: center;
+          font-size: 0.75rem;
+          color: var(--text-secondary);
+          font-weight: 500;
+          letter-spacing: 0.04em;
+          padding: 20px 0 10px 0;
+          border-top: 1px solid var(--glass-border);
+        }
+      </style><div class="app-container "><main class="portfolio-card"><div class="card-controls"><button class="theme-toggle-btn" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button></div><div class="profile-title"><h1>Abdullah</h1><p>Full-Stack Engineer &amp; Systems Administrator</p><div class="contact-info-block"><a href="mailto:abdulla10k@atomicmail.io" class="contact-link"><i class="fas fa-envelope"></i> abdulla10k@atomicmail.io</a><a href="https://www.linkedin.com/in/abuhuraira10000" target="_blank" rel="noopener noreferrer" class="contact-link"><i class="fab fa-linkedin" style="font-size:1.05rem"></i><span class="linkedin-text">LinkedIn</span></a></div></div><p class="bio-text">Architecting high-availability multi-cloud environments, modern full-stack web platforms, and secure data infrastructure layouts. Specialized in building scalable applications, orchestrating deep endpoint security layers, and optimizing robust relational database systems across enterprise networks.</p><div class="section-divider"></div><h2><i class="fas fa-cubes"></i> Technical Expertise</h2><div class="tech-grid"><div class="tech-badge"><i class="fab fa-java"></i>Core Java</div><div class="tech-badge"><i class="fas fa-laptop-code"></i>Advanced Java</div><div class="tech-badge"><i class="fas fa-globe"></i>Web Dev</div><div class="tech-badge"><i class="fas fa-code"></i>JSON</div><div class="tech-badge"><i class="fab fa-js"></i>JScript</div><div class="tech-badge"><i class="fab fa-python"></i>Python</div><div class="tech-badge"><i class="fab fa-html5"></i>HTML5</div><div class="tech-badge"><i class="fab fa-css3-alt"></i>CSS3</div><div class="tech-badge"><i class="fas fa-database"></i>MS SQL Server</div><div class="tech-badge"><i class="fas fa-server"></i>Oracle Database</div><div class="tech-badge"><i class="fas fa-terminal"></i>C Language</div><div class="tech-badge"><i class="fas fa-microchip"></i>C++</div><div class="tech-badge"><i class="fas fa-hashtag"></i>C# &amp; VB.NET</div><div class="tech-badge"><i class="fas fa-link"></i>Blockchain</div><div class="tech-badge"><i class="fab fa-windows"></i>ASP.NET</div><div class="tech-badge"><i class="fas fa-file-code"></i>XML</div><div class="tech-badge"><i class="fas fa-cash-register"></i>ERP &amp; POS Systems</div><div class="tech-badge"><i class="fas fa-layer-group"></i>Hyper-V &amp; VMware</div><div class="tech-badge"><i class="fas fa-network-wired"></i>vSphere &amp; ESXi</div><div class="tech-badge"><i class="fas fa-lock"></i>VPN</div><div class="tech-badge"><i class="fab fa-jira"></i>Jira</div><div class="tech-badge"><i class="fas fa-cloud"></i>Azure, AWS, GCP</div><div class="tech-badge"><i class="fas fa-brain"></i>Advanced AI</div><div class="tech-badge"><i class="fas fa-user-gear"></i>Social Engineering</div><div class="tech-badge"><i class="fas fa-chart-pie"></i>Power BI &amp; Access</div><div class="tech-badge"><i class="fas fa-screwdriver-wrench"></i>Hardware &amp; Peripherals</div><div class="tech-badge"><i class="fas fa-hdd"></i>RAID &amp; Storage Arrays</div><div class="tech-badge"><i class="fas fa-folder-tree"></i>OS &amp; Active Directory</div><div class="tech-badge"><i class="fas fa-shield-halved"></i>Firewalls &amp; Network</div><div class="tech-badge"><i class="fas fa-shield-virus"></i>Centralized Endpoint Security</div><div class="tech-badge"><i class="fas fa-route"></i>ONT Modem &amp; Edge Routing</div><div class="tech-badge"><i class="fas fa-user-shield"></i>M365 &amp; Entra ID</div></div><div class="section-divider"></div><h2><i class="fas fa-id-card"></i> Professional Certifications</h2><div class="cert-grid"><div class="cert-category-card"><div class="cert-category-header"><i class="fas fa-code"></i><h3>Software &amp; Web Development</h3></div><span class="cert-count-tag">5<!-- --> Credentials</span></div><div class="cert-category-card"><div class="cert-category-header"><i class="fas fa-cloud"></i><h3>Cloud &amp; Infrastructure</h3></div><span class="cert-count-tag">5<!-- --> Credentials</span></div><div class="cert-category-card"><div class="cert-category-header"><i class="fas fa-shield-halved"></i><h3>Networking &amp; Cybersecurity</h3></div><span class="cert-count-tag">5<!-- --> Credentials</span></div><div class="cert-category-card"><div class="cert-category-header"><i class="fas fa-chart-pie"></i><h3>Data Engineering &amp; Analytics</h3></div><span class="cert-count-tag">2<!-- --> Credentials</span></div><div class="cert-category-card"><div class="cert-category-header"><i class="fas fa-gears"></i><h3>Systems Engineering &amp; Management</h3></div><span class="cert-count-tag">3<!-- --> Credentials</span></div><div class="cert-category-card"><div class="cert-category-header"><i class="fas fa-brain"></i><h3>Artificial Intelligence</h3></div><span class="cert-count-tag">2<!-- --> Credentials</span></div></div><div class="section-divider"></div><h2><i class="fas fa-history"></i> Engineering Milestones</h2><div class="timeline"><div class="timeline-item" data-index="0"><div class="timeline-date">On-Premises Infrastructure &amp; Virtualization Engineering</div><div class="timeline-title">Bare-Metal Server Provisioning, Hyper-V, VMware vSphere &amp; ESXi Orchestration</div><p class="timeline-desc">Directed end-to-end bare-metal hardware engineering across production server rooms and virtualized enterprise clusters. Expertly handled <strong>physical installation, preventative maintenance, and secure bare-metal server deployment lifecycles</strong>. Specialized in deep orchestration environments utilizing <strong>Hyper-V, VMware, vSphere, and ESXi</strong> virtualization stacks to manage multi-tenant server compute configurations. Executed <strong>zero-downtime hot-swappable hard disk expansions, faulty logical volume reconstructions</strong>, and highly-resilient storage layouts using hardware RAID topologies. <strong>Managed extensive device setups, peripheral hardware debugging, and structural optimization for enterprise network printers and corporate multi-function photocopiers.</strong></p></div><div class="timeline-item" data-index="1"><div class="timeline-date">Cloud Architecture, DevOps &amp; Workflow Governance</div><div class="timeline-title">Multi-Cloud Orchestration &amp; Jira Sprint Tracking</div><p class="timeline-desc">Designed, provisioned, and managed highly available cloud architecture matrices across <strong>Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP)</strong>. <strong>Orchestrated secure infrastructure migrations, serverless execution computing deployments, and continuous delivery pipelines while enforcing cloud network security policy parameters across multi-tenant enterprise environments.</strong> Streamlined team lifecycle operations, technical documentation, and continuous development infrastructure sprint assignments utilizing <strong>Jira</strong> configuration modules.</p></div><div class="timeline-item" data-index="2"><div class="timeline-date">Advanced AI, Data Analytics &amp; Media Design</div><div class="timeline-title">Intelligence Modeling, Microsoft Ecosystems &amp; Rich Media Operations</div><p class="timeline-desc">Pioneered the integration of <strong>advanced Artificial Intelligence automation models</strong> to optimize system workflows and technical operations. Expertly deployed data analytics intelligence layers using <strong>Microsoft Power BI dashboard schemas</strong> and managed relational local database infrastructure utilizing <strong>Microsoft Access DB</strong>. Fully proficient across the complete Microsoft Office 365 enterprise suite, backed by advanced rich-media engineering capabilities in professional <strong>Adobe Photoshop editing and high-end video editing pipelines</strong>.</p></div><div class="timeline-item" data-index="3"><div class="timeline-date">ERP Systems &amp; Workplace Security Operations</div><div class="timeline-title">Enterprise Resource Planning, SaaS &amp; Advanced Biometrics Integration</div><p class="timeline-desc">Supervised the administration, data orchestration, and platform integrity of core enterprise environments including <strong>SAP architectures</strong> and modern Software-as-a-Service (SaaS) utilities. Successfully maintained business continuity across leading accountancy platforms, including <strong>TallyPrime 7.0 and AutoCount Software</strong> configurations. Directed the full physical configuration and deployment of the <strong>Biometrics Time Attendance System with AI Face Recognition, Fingerprint and RFID</strong> access panels across distributed office nodes, while configuring <strong>automated payroll systems and Time Management Systems (TMS).</strong></p></div><div class="timeline-item" data-index="4"><div class="timeline-date">Directory Services &amp; OS Orchestration</div><div class="timeline-title">Active Directory Domain Controls &amp; Multi-Platform Systems</div><p class="timeline-desc">Architected enterprise-level Identity and Access Management layout modules within Windows Server ecosystems (up to Server 2025 platforms). Mastered the orchestration of <strong>Active Directory Domain Services</strong>, including automated <strong>Group Policy deployments</strong>, structural organization tree management, and robust multi-platform workstation compliance matrices spanning Windows 10, Windows 11, and enterprise Linux landscapes.</p></div><div class="timeline-item" data-index="5"><div class="timeline-date">Cybersecurity &amp; Centralized Endpoint Governance</div><div class="timeline-title">M365 Admin, Entra ID &amp; Distributed Perimeter Anti-Virus Platforms</div><p class="timeline-desc">Orchestrated secure enterprise identity management utilizing <strong>M365 Admin Center and Microsoft Entra ID</strong>. Enforced comprehensive zero-trust architectures by deploying Multi-Factor Authentication (MFA), strict conditional access profiles, and centralized endpoint management tools. Expertly administered distributed network defense configurations across modern cloud security architectures, deploying and maintaining enterprise centralized Anti-Virus platforms including <strong>Sophos environments, Trend Vision One threat intelligence, McAfee infrastructure, Bitdefender networks, and Microsoft Defender management</strong>. Maintained extensive workstation host defense frameworks across client endpoints using <strong>Norton 360, Malwarebytes endpoints, Avast Business utilities, and Avira security tools</strong> to completely mitigate environmental security vulnerabilities. <strong>Designed secure Virtual Private Network (VPN) layouts for protected remote perimeter entry, combined with internal human-risk simulation frameworks to defend nodes from social engineering and targeted phishing intrusions.</strong></p></div><div class="timeline-item" data-index="6"><div class="timeline-date">Network Topology, ONT Telecommunications &amp; Vendor Coordination</div><div class="timeline-title">Core Layer-4 Switching, Optical Fiber Modems &amp; Collaborative Engineering</div><p class="timeline-desc">Designed and deployed reliable local area networks encompassing core <strong>Layer-4 switches, physical routers, high-density Wi-Fi nodes, LAN configurations, and segmented VLAN schemes</strong>. Specialized in high-performance telecommunications architectures, executing structural deployments, hardware profiling, provisioning, and complex configurations for edge <strong>Optical Network Terminal (ONT) modems</strong> to guarantee optimal fiber-optic line termination and connectivity. Maintained deep engineering synergy and technical <strong>cooperation with tier-1 internet service providers, hardware suppliers, and external engineering vendors</strong> to manage formal replies, draft incident analysis reports, track fault rectification timelines, and execute seamless service level agreements (SLAs). Fully integrated surveillance ecosystems including smart IP cameras, enterprise CCTV systems, and unified IP Phone configurations over PoE networks.</p></div><div class="timeline-item" data-index="7"><div class="timeline-date">Data Retention &amp; Resiliency Operations</div><div class="timeline-title">Network-Attached Storage (NAS), Backups &amp; Disaster Recovery</div><p class="timeline-desc">Engineered fault-tolerant corporate data storage setups deploying standalone <strong>Network-Attached Storage (NAS) configurations</strong>. Formulated aggressive regulatory backup models, immutable retention storage layers, and rigorous full-volume data recovery protocols to prevent operational business interruption.</p></div><div class="timeline-item" data-index="8"><div class="timeline-date">Enterprise Web Architecture &amp; Databases</div><div class="timeline-title">Full-Stack Web Development and Application Development</div><p class="timeline-desc">Architected and deployed modular enterprise portals and thick-client integrations utilizing an advanced suite of tools including <strong>HTML5, CSS3, JScript, JSP, ASP.NET, Bootstrap, React, and Node.js alongside custom VB.NET layouts</strong>. Engineered transactional Point of Sale (POS) environments and automated Call Accounting telemetry logging frameworks. Designed and optimized back-end structured engine environments across <strong>Microsoft SQL Server, MySQL instances, and heavy enterprise Oracle Database architectures</strong>.</p></div></div></main><footer class="site-footer">Copyright ©2026 Abdullah. All Rights Reserved</footer></div><!--$--><!--/$--><script src="/_next/static/chunks/webpack-203cea5ec2127b1d.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7121,[],\"\"]\n3:I[4581,[],\"\"]\n4:I[1304,[],\"ClientPageRoot\"]\n5:I[7462,[\"974\",\"static/chunks/app/page-5dc54495a3da8de6.js\"],\"default\"]\n8:I[484,[],\"OutletBoundary\"]\n9:\"$Sreact.suspense\"\nb:I[484,[],\"ViewportBoundary\"]\nd:I[484,[],\"MetadataBoundary\"]\nf:I[7123,[],\"default\",1]\n:HL[\"/_next/static/media/22a5144ee8d83bca-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/7d4881bb7e1bf84d-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/23ac9e57c7ccffde.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/23ac9e57c7ccffde.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[\"$\",\"body\",null,{\"className\":\"__variable_246ccd __variable_c29908 min-h-full flex flex-col\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"serverProvidedParams\":{\"searchParams\":{},\"params\":{},\"promises\":[\"$@6\",\"$@7\"]}}],null,[\"$\",\"$L8\",null,{\"children\":[\"$\",\"$9\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@a\"}]}]]}],{},null,false,null]},null,false,null],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$Lb\",null,{\"children\":\"$Lc\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Ld\",null,{\"children\":[\"$\",\"$9\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Le\"}]}]}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],false]],\"m\":\"$undefined\",\"G\":[\"$f\",[]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"QHf11ctzbnc4cY5Q9K3d9\"}\n"])</script><script>self.__next_f.push([1,"6:{}\n7:\"$0:f:0:1:1:children:0:props:children:0:props:serverProvidedParams:params\"\n"])</script><script>self.__next_f.push([1,"c:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"10:I[6869,[],\"IconMark\"]\na:null\ne:[[\"$\",\"title\",\"0\",{\"children\":\"Abdullah  | Software Developer\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Full-Stack Engineer \u0026 System Administrator\"}],[\"$\",\"link\",\"2\",{\"rel\":\"icon\",\"href\":\"/favicon.ico?603d046c9a6fdfbb\",\"type\":\"image/x-icon\",\"sizes\":\"16x16\"}],[\"$\",\"link\",\"3\",{\"rel\":\"icon\",\"href\":\"/icon.svg?v=8\",\"type\":\"image/svg+xml\"}],[\"$\",\"link\",\"4\",{\"rel\":\"apple-touch-icon\",\"href\":\"/apple-touch-icon.png?v=8\",\"sizes\":\"180x180\",\"type\":\"image/png\"}],[\"$\",\"$L10\",\"5\",{}]]\n"])</script></body></html>
