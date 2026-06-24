@@ -13,15 +13,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abdullah  | Software Developer",
+  title: "Abdullah | Software Developer",
   description: "Full-Stack Engineer & System Administrator",
   icons: {
     icon: [
-      { url: "/icon.svg?v=99", type: "image/svg+xml" },
+      { url: "/icon.png?v=99", type: "image/png" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png?v=99", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png?v=99", sizes: "180x180" },
     ],
+  },
+  openGraph: {
+    title: "Abdullah | Software Developer",
+    description: "Full-Stack Engineer & System Administrator",
+    url: "https://abdulla10k.dev",
+    siteName: "Abdullah Portfolio",
+    images: [
+      {
+        url: "/icon.png?v=99",
+        width: 180,
+        height: 180,
+        alt: "Logo",
+      },
+    ],
+    type: "website",
   },
 };
 
@@ -32,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} min-h-full flex flex-col`}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
     </html>
