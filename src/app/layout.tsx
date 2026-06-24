@@ -12,11 +12,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Your metadata with the newly designed favicon links
+// Your complete fixed portfolio metadata
 export const metadata: Metadata = {
   title: "Abdullah | Software Developer",
   description: "Full-Stack Engineer & Systems Administrator",
   icons: {
+    // Browsers will use the high-quality SVG asset for the browser tab
     icon: "/icon.svg", 
     apple: "/icon.svg",
   },
@@ -27,16 +28,17 @@ export const metadata: Metadata = {
     siteName: "Abdullah Portfolio",
     images: [
       {
-        url: "/icon.svg",
+        url: "/icon.png", // PNG format forces chat apps to generate link previews successfully
         width: 512,
         height: 512,
+        type: "image/png",
       },
     ],
     type: "website",
   },
 };
 
-// Next.js strictly requires 'export default' for the layout component function
+// Default layout function export required by the Next.js compiler architecture
 export default function RootLayout({
   children,
 }: Readonly<{
