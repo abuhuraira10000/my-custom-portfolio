@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://abdulla10k.dev/icon.png", 
-        width: 140,   // Low dimensions force the compact side-thumbnail card layout
-        height: 140,  // Low dimensions force the compact side-thumbnail card layout
+        width: 140,   
+        height: 140,  
         type: "image/png",
       },
     ],
@@ -36,6 +36,7 @@ export const metadata: Metadata = {
   },
 };
 
+// Next.js strictly requires this default export layout function to build your site layout frame
 export default function RootLayout({
   children,
 }: Readonly<{
