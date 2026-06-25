@@ -14,21 +14,21 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Abdullah | Software Developer",
-  description: "Full-Stack Engineer & Systems Administrator",
+  description: "Full-Stack Engineer & Systems Administrator ☁️",
   icons: {
     icon: "/icon.svg", 
     apple: "/icon.svg",
   },
   openGraph: {
     title: "Abdullah | Software Developer",
-    description: "Full-Stack Engineer & Systems Administrator",
+    description: "Full-Stack Engineer & Systems Administrator ☁️",
     url: "https://abdulla10k.dev",
     siteName: "Abdullah Portfolio",
     images: [
       {
         url: "https://abdulla10k.dev/icon.png", 
-        width: 140,   
-        height: 140,  
+        width: 140,   // Keeps the layout compact on the side
+        height: 140,  // Keeps the layout compact on the side
         type: "image/png",
       },
     ],
@@ -36,7 +36,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Next.js strictly requires this default export layout function to build your site layout frame
 export default function RootLayout({
   children,
 }: Readonly<{
