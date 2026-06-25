@@ -16,7 +16,6 @@ export const metadata: Metadata = {
   title: "Abdullah | Software Developer",
   description: "Full-Stack Engineer & Systems Administrator",
   icons: {
-    // High-quality vector asset used by web browsers for the browser tab favicon
     icon: "/icon.svg", 
     apple: "/icon.svg",
   },
@@ -27,10 +26,9 @@ export const metadata: Metadata = {
     siteName: "Abdullah Portfolio",
     images: [
       {
-        // Hardcoded absolute URL prevents Next.js from falling back to localhost strings
         url: "https://abdulla10k.dev/icon.png", 
-        width: 512,
-        height: 512,
+        width: 256,   // Lowering these dimensions forces chat platforms
+        height: 256,  // to render a compact side-thumbnail card layout
         type: "image/png",
       },
     ],
