@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://abdulla10k.dev/icon.png", 
-        width: 256,   // Lowering these dimensions forces chat platforms
-        height: 256,  // to render a compact side-thumbnail card layout
+        width: 140,   // Low dimensions force the compact side-thumbnail card layout
+        height: 140,  // Low dimensions force the compact side-thumbnail card layout
         type: "image/png",
       },
     ],
