@@ -13,22 +13,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  // Keeping strings brief forces WhatsApp to drop the native quick-forward UI button
-  title: "Abdullah¿ ~`<\Software Developer|>##", 
-  description: "Full-st@ck €ng¡neer && $y$tem @dm¡n¡str@tor", 
+  title: "Abdullah¿ ~`\\Software Developer| >##",
+  description: "Full-st@ck €ng;neer && $y$tem @dm;n;str@tor",
   icons: {
     icon: "/icon.svg", 
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "Abdullah",
-    description: "Software Developer & SysAdmin",
+    title: "Abdullah¿ ~`\\Software Developer| >##",
+    description: "Full-st@ck €ng;neer && $y$tem @dm;n;str@tor",
     url: "https://abdulla10k.dev",
     siteName: "Portfolio",
     images: [
       {
         url: "https://abdulla10k.dev/icon.png", 
-        width: 140,   // Keeps it as a compact thumbnail layout
+        width: 140,   
         height: 140,  
         type: "image/png",
       },
