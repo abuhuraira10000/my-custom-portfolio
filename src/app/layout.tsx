@@ -13,22 +13,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abdullah | Software Developer",
-  description: "Full-Stack Engineer & Systems Administrator ☁️",
+  // Moving the cloud to the front ensures WhatsApp's UI elements won't block it
+  title: "☁️ Abdullah | Software Developer",
+  description: "Full-Stack Engineer & Systems Administrator",
   icons: {
     icon: "/icon.svg", 
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "Abdullah | Software Developer",
-    description: "Full-Stack Engineer & Systems Administrator ☁️",
+    title: "☁️ Abdullah | Software Developer",
+    description: "Full-Stack Engineer & Systems Administrator",
     url: "https://abdulla10k.dev",
     siteName: "Abdullah Portfolio",
     images: [
       {
         url: "https://abdulla10k.dev/icon.png", 
-        width: 140,   // Keeps the layout compact on the side
-        height: 140,  // Keeps the layout compact on the side
+        width: 140,   
+        height: 140,  
         type: "image/png",
       },
     ],
