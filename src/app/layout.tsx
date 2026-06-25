@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abdullah~`Software Developer>",
-  description: "Full-stack €ng¡neer&& $ystem Administrator",
+  title: "Abdullah ~`Software Developer》",
+  description: "Full-stack €ng¡neer && $ysAdmin",
   icons: {
     icon: "/icon.svg", 
     apple: "/icon.svg",
