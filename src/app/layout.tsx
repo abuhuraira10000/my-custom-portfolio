@@ -13,22 +13,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  // Moving the cloud to the front ensures WhatsApp's UI elements won't block it
-  title: "☁️ Abdullah | Software Developer",
-  description: "Full-Stack Engineer & Systems Administrator",
+  // Keeping strings brief forces WhatsApp to drop the native quick-forward UI button
+  title: "Abdullah", 
+  description: "Software Developer & SysAdmin", 
   icons: {
     icon: "/icon.svg", 
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "☁️ Abdullah | Software Developer",
-    description: "Full-Stack Engineer & Systems Administrator",
+    title: "Abdullah",
+    description: "Software Developer & SysAdmin",
     url: "https://abdulla10k.dev",
-    siteName: "Abdullah Portfolio",
+    siteName: "Portfolio",
     images: [
       {
         url: "https://abdulla10k.dev/icon.png", 
-        width: 140,   
+        width: 140,   // Keeps it as a compact thumbnail layout
         height: 140,  
         type: "image/png",
       },
