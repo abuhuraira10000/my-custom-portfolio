@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   // Keeping strings brief forces WhatsApp to drop the native quick-forward UI button
-  title: "Abdullah", 
-  description: "Software Developer & SysAdmin", 
+  title: "Abdullah¿ ~`<\Software Developer|>##", 
+  description: "Full-st@ck €ng¡neer && $y$tem @dm¡n¡str@tor", 
   icons: {
     icon: "/icon.svg", 
     apple: "/icon.svg",
