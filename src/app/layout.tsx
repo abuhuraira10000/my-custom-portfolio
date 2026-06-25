@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "Abdullah ~`Software Developer>",
-    description: "Full-stack €ng¡neer&& $ystem Administrator",
+    title: "Abdullah ~`Software Developer》",
+    description: "Full-stack €ng¡neer && $ysAdmin",
     url: "https://abdulla10k.dev",
     siteName: "Portfolio",
     images: [
