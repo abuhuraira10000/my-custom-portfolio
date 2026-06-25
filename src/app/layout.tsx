@@ -13,15 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abdullah¿ ~`\\Software Developer| >##",
-  description: "Full-st@ck €ng;neer && $y$tem @dm;n;str@tor",
+  title: "Abdullah~`Software Developer>",
+  description: "Full-stack €ng¡neer&& $ystem Administrator",
   icons: {
     icon: "/icon.svg", 
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "Abdullah¿ ~`\\Software Developer|>##",
-    description: "Full-st@ck*€ng¡neer&& $y$tem @dm¡n¡str@tor",
+    title: "Abdullah ~`Software Developer>",
+    description: "Full-stack €ng¡neer&& $ystem Administrator",
     url: "https://abdulla10k.dev",
     siteName: "Portfolio",
     images: [
