@@ -12,12 +12,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Your complete fixed portfolio metadata
 export const metadata: Metadata = {
   title: "Abdullah | Software Developer",
   description: "Full-Stack Engineer & Systems Administrator",
   icons: {
-    // Browsers will use the high-quality SVG asset for the browser tab
+    // High-quality vector asset used by web browsers for the browser tab favicon
     icon: "/icon.svg", 
     apple: "/icon.svg",
   },
@@ -28,7 +27,8 @@ export const metadata: Metadata = {
     siteName: "Abdullah Portfolio",
     images: [
       {
-        url: "/icon.png", // PNG format forces chat apps to generate link previews successfully
+        // Hardcoded absolute URL prevents Next.js from falling back to localhost strings
+        url: "https://abdulla10k.dev/icon.png", 
         width: 512,
         height: 512,
         type: "image/png",
@@ -38,7 +38,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Default layout function export required by the Next.js compiler architecture
 export default function RootLayout({
   children,
 }: Readonly<{
